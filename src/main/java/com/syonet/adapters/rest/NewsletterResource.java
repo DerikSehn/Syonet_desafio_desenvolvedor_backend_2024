@@ -36,42 +36,4 @@ public class NewsletterResource {
         return Response.status(Response.Status.CREATED).build();
     }
 
-    /*
-     * @Path("/{id}")
-     * 
-     * @GET
-     * public Response getNewsletterById(@PathParam("id") Long id) {
-     * return newsletterService.getNewsletterById(id)
-     * .map(newsletter -> Response.ok(newsletter).build())
-     * .orElse(Response.status(Response.Status.NOT_FOUND).build());
-     * }
-     */
-
-    /*
-     * @PUT
-     * 
-     * @Path("/{id}")
-     * 
-     * @Transactional
-     * public Response updateNewsletter(@PathParam("id") Long id, Newsletter
-     * newsletter) {
-     * return newsletterService.getNewsletterById(id)
-     * .map(existingNewsletter -> {
-     * newsletter.id = id;
-     * newsletterService.saveNewsletter(newsletter);
-     * return Response.ok().build();
-     * })
-     * .orElse(Response.status(Response.Status.NOT_FOUND).build());
-     * }
-     * 
-     * @DELETE
-     * 
-     * @Path("/{id}")
-     * 
-     * @Transactional
-     * public Response deleteNewsletter(@PathParam("id") Long id) {
-     * newsletterService.deleteNewsletter(id);
-     * return Response.noContent().build();
-     * }
-     */
 }

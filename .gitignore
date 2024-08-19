@@ -1,3 +1,5 @@
+#git rm --cached src/main/resources/application.properties
+
 #Maven
 target/
 pom.xml.tag
@@ -45,4 +47,4 @@ nb-configuration.xml
 .certs/
 
 # Quarkus
-src
+/src/main/resources/application.properties

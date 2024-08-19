@@ -40,20 +40,4 @@ public class CustomerServiceTest {
         assertEquals(3, customers.size());
     }
 
-    /*
-     * @Test
-     * 
-     * @Transactional
-     * public void testGetCustomerById() {
-     * Customer customer = new Customer();
-     * customer.email = "customer@example.com";
-     * customer.name = "nome";
-     * 
-     * customerRepository.persistAndFlush(customer);
-     * 
-     * Optional<Customer> foundCustomer = customerService.getCustomerById();
-     * assertTrue(foundCustomer.isPresent());
-     * assertEquals(customer.id, foundCustomer.get().id);
-     * }
-     */
 }

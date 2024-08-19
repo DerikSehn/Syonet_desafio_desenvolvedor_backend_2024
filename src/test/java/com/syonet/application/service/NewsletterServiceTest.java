@@ -60,24 +60,6 @@ public class NewsletterServiceTest {
         assertEquals(2, newsletters.size());
     }
 
-    /*
-     * @Test
-     * 
-     * @Transactional
-     * public void testGetNewsletterById() {
-     * Newsletter newsletter = new Newsletter();
-     * newsletter.title = "Newsletter Title";
-     * newsletter.description = "Newsletter Description";
-     * newsletter.link = "http://example.com";
-     * 
-     * newsletterRepository.saveNewsletter(newsletter);
-     * 
-     * Optional<Newsletter> foundNewsletter = newsletterService.(newsletter.id);
-     * assertTrue(foundNewsletter.isPresent());
-     * assertEquals(newsletter.id, foundNewsletter.get().id);
-     * assertEquals(newsletter.title, foundNewsletter.get().title);
-     * }
-     */
     @Test
     @Transactional
     public void testInvalidLinkFormat() {

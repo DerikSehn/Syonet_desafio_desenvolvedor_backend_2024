@@ -26,29 +26,4 @@ public class NewsletterService {
 
     }
 
-    /*
-     * public List<Newsletter> getNewsletters(int page, int size) {
-     * TypedQuery<Newsletter> query =
-     * entityManager.createQuery("SELECT n FROM Newsletter n", Newsletter.class);
-     * query.setFirstResult(page * size);
-     * query.setMaxResults(size);
-     * return query.getResultList();
-     * }
-     */
-    /*
-     * public Optional<Newsletter> getNewsletterById(Long id) {
-     * return Optional.ofNullable(entityManager.find(Newsletter.class, id));
-     * }
-     */
-
-    /*
-     * @Transactional
-     * public void deleteNewsletter(Long id) {
-     * Newsletter newsletter = entityManager.find(Newsletter.class, id);
-     * if (newsletter != null) {
-     * entityManager.remove(newsletter);
-     * }
-     * }
-     */
-
 }

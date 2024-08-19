@@ -36,42 +36,4 @@ public class CustomerResource {
         return Response.status(Response.Status.CREATED).build();
     }
 
-    /*
-     * @Path("/{id}")
-     * public Response getCustomerById(@PathParam("id") Long id) {
-     * Optional<Customer> customer = customerService.getCustomerById(id);
-     * if (customer.isPresent()) {
-     * return Response.ok(customer.get()).build();
-     * } else {
-     * return Response.status(Response.Status.NOT_FOUND).build();
-     * }
-     * }
-     */
-
-    /*
-     * @PUT
-     * 
-     * @Path("/{id}")
-     * 
-     * @Transactional
-     * public Response updateCustomer(@PathParam("id") Long id, Customer customer) {
-     * Optional<Customer> existingCustomer = customerService.getCustomerById(id);
-     * if (existingCustomer.isPresent()) {
-     * customer.id = id;
-     * customerService.saveCustomer(customer);
-     * return Response.ok().build();
-     * }
-     * return Response.status(Response.Status.NOT_FOUND).build();
-     * }
-     * 
-     * @DELETE
-     * 
-     * @Path("/{id}")
-     * 
-     * @Transactional
-     * public Response deleteCustomer(@PathParam("id") Long id) {
-     * customerService.deleteCustomer(id);
-     * return Response.noContent().build();
-     * }
-     */
 }
