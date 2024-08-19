@@ -26,6 +26,9 @@ public class NewsletterServiceTest {
     @Test
     @Transactional
     public void testSaveNewsletter() {
+
+        deleteAllNewsletters();
+
         Newsletter newsletter = new Newsletter();
         newsletter.title = "New Feature Released!";
         newsletter.description = "We have released a new feature.";
@@ -39,16 +42,12 @@ public class NewsletterServiceTest {
         assertEquals(newsletter.description, foundNewsletter.get().description);
         assertEquals(newsletter.link, foundNewsletter.get().link);
 
-
-        if (foundNewsletter.isPresent()) {
-            newsletterRepository.delete(foundNewsletter.get());
-        }
-
     }
 
     @Test
     @Transactional
     public void findUnsentNewsletters() {
+        deleteAllNewsletters();
         Newsletter newsletter1 = new Newsletter();
         newsletter1.title = "Newsletter 1";
         newsletter1.description = "Description 1";
@@ -79,5 +78,10 @@ public class NewsletterServiceTest {
         });
 
         assertTrue(exception.getMessage().contains("Invalid URL format"));
+    }
+
+    private void deleteAllNewsletters() {
+        newsletterRepository.deleteAll();
+        newsletterRepository.flush();
     }
 }

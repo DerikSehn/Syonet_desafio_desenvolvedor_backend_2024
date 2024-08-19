@@ -26,6 +26,9 @@ public class CustomerServiceTest {
     @Test
     @Transactional
     public void testGetCustomers() {
+
+        deleteAllCustomers();
+
         Customer customer1 = new Customer();
         customer1.email = "customer1@example.com";
         customer1.name = "nome1";
@@ -45,6 +48,9 @@ public class CustomerServiceTest {
     @Test
     @Transactional
     public void testSaveCustomer() {
+
+        deleteAllCustomers();
+
         Customer customer = new Customer();
         customer.email = "example@mail.com";
         customer.name = "name";
@@ -57,4 +63,10 @@ public class CustomerServiceTest {
         assertEquals(customer.birthDate, foundCustomer.birthDate);
 
     }
+
+    private void deleteAllCustomers() {
+        customerRepository.deleteAll();
+        customerRepository.flush();
+    }
+
 }

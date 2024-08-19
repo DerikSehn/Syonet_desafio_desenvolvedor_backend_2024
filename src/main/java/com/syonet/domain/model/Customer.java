@@ -26,7 +26,7 @@ public class Customer extends PanacheEntity {
     @Email(message = "Email should be valid")
     public String email;
 
-    @Column
+    @Column(nullable = true)
     @Past(message = "Birth date must be in the past")
     public LocalDate birthDate;
 }
