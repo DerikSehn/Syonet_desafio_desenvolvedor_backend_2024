@@ -1,3 +1,5 @@
+#git rm --cached src/main/resources/application.properties
+
 #Maven
 target/
 pom.xml.tag
@@ -43,3 +45,6 @@ nb-configuration.xml
 /.quarkus/cli/plugins/
 # TLS Certificates
 .certs/
+
+# Quarkus
+/src/main/resources/application.properties
