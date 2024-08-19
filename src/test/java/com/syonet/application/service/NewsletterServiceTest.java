@@ -38,6 +38,12 @@ public class NewsletterServiceTest {
         assertEquals(newsletter.title, foundNewsletter.get().title);
         assertEquals(newsletter.description, foundNewsletter.get().description);
         assertEquals(newsletter.link, foundNewsletter.get().link);
+
+
+        if (foundNewsletter.isPresent()) {
+            newsletterRepository.delete(foundNewsletter.get());
+        }
+
     }
 
     @Test

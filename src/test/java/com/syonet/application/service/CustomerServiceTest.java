@@ -2,6 +2,7 @@ package com.syonet.application.service;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
@@ -37,7 +38,23 @@ public class CustomerServiceTest {
         customerRepository.persistAndFlush(customer2);
 
         List<Customer> customers = customerService.getCustomers();
-        assertEquals(3, customers.size());
+        assertEquals(2, customers.size());
+
     }
 
+    @Test
+    @Transactional
+    public void testSaveCustomer() {
+        Customer customer = new Customer();
+        customer.email = "example@mail.com";
+        customer.name = "name";
+        customer.birthDate = LocalDate.of(1990, 1, 1);
+        customerService.saveCustomer(customer);
+
+        Customer foundCustomer = customerRepository.findById(customer.id);
+        assertEquals(customer.email, foundCustomer.email);
+        assertEquals(customer.name, foundCustomer.name);
+        assertEquals(customer.birthDate, foundCustomer.birthDate);
+
+    }
 }
