@@ -51,6 +51,7 @@ Criar um sistema backend que permita o cadastro de clientes e newsletters e auto
    - **Banco de Dados:** PostgreSQL
    - **Framework:** Quarkus
    - **Containerização:** Docker
+   - **Testes:** Junit 5
 
 ### Critérios de Avaliação
 
