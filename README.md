@@ -75,8 +75,8 @@ Criar um sistema backend que permita o cadastro de clientes e newsletters e auto
 1. **Clone o Repositório:**
 
    ```bash
-   git clone https://github.com/username/syonet_newsletter.git
-   cd syonet_newsletter
+   git clone https://github.com/DerikSehn/Syonet_desafio_desenvolvedor_backend_2024.git
+   cd Syonet_desafio_desenvolvedor_backend_2024
    ```
 
 2. **Inicie o Container Docker do PostgreSQL:**
