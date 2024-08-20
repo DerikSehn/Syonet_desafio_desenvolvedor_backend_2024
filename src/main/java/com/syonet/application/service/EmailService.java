@@ -36,12 +36,17 @@ public class EmailService {
             if (customer.birthDate != null && customer.birthDate.isEqual(LocalDate.now())) {
                 emailBody.append("Feliz aniversário!\n");
             }
+            emailBody.append("Estas são as notícias diárias:\n");
 
-            for (Newsletter newsletter : newsletters) {
-                emailBody.append("\n").append(newsletter.title).append("\n");
-                emailBody.append(newsletter.description).append("\n");
-                if (newsletter.link != null) {
-                    emailBody.append("Leia mais em: ").append(generateAnchor(newsletter.link)).append("\n");
+            if (newsletters.isEmpty()) {
+                emailBody.append("Não há notícias para o dia de hoje.\n");
+            } else {
+                for (Newsletter newsletter : newsletters) {
+                    emailBody.append("\n").append(newsletter.title).append("\n");
+                    emailBody.append(newsletter.description).append("\n");
+                    if (newsletter.link != null) {
+                        emailBody.append("Leia mais em: ").append(generateAnchor(newsletter.link)).append("\n");
+                    }
                 }
             }
             try {
